@@ -24,70 +24,143 @@
             <hr style="margin-top: 0px;margin-bottom: 0px;"><a class="dropdown-item" href="#" data-bs-target="#ancien" data-bs-toggle="modal">ancien projet</a>
         </div>
     </div>
+
+    <!-- ? modal nouveau pfe -->
     <div class="modal fade" role="dialog" tabindex="-1" id="nouveau">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
+                <!-- ? header modal -->
                 <div class="modal-header d-md-flex justify-content-lg-center" style="background: #f1f5f8;">
                     <div class="d-md-flex justify-content-md-center">
                         <h4 class="modal-title text-center d-lg-flex justify-content-lg-center" style="color: var(--bs-gray-900);">Vous remplissez un nouveau PFE</h4>
                     </div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!-- ? body modal -->
                 <div class="modal-body" style="background: #f1f5f8;">
-                    <form>
+                    <!--// TODO : enctype in form -->
+                    <form enctype="multipart/form-data" #valid="ngForm" [formGroup]="nouveauPfe">
+                        <!-- ? titre -->
                         <div class="control-group" style="margin-top: 5px;">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control color-bm" type="text" id="email" required="" placeholder="Email" style="box-shadow: 0px 0px;color: var(--bs-gray-900);height: 62px;opacity: 1;--bs-body-bg: #2f3438;--bs-body-font-weight: normal;background: var(--bs-white);font-family: Alef, sans-serif;border-radius: 13px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">titre du projet</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 form-floating controls pb-2">
+                                <input formControlName="titre" class="form-control color-bm" type="text" id="email" required="" placeholder="Email" style="box-shadow: 0px 0px;color: var(--bs-gray-900);height: 62px;opacity: 1;--bs-body-bg: #2f3438;--bs-body-font-weight: normal;background: var(--bs-white);font-family: Alef, sans-serif;border-radius: 13px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">
+                                titre du projet
+                            </label><small class="form-text text-danger help-block"></small></div>
                         </div>
+                        <!-- ? titre validation -->
+                        <div *ngIf="">
+
+                        </div>
+                        <!--  -->
+                        <!-- ? niveau -->
                         <div class="control-group" style="margin-top: 5px;">
-                            <div class="mb-0 form-floating controls pb-2"><select class="form-select" style="border-bottom-width: 2px;border-bottom-color: var(--bs-teal);border-radius: 13px;">
+                            <div class="mb-0 form-floating controls pb-2"><select class="form-select" style="box-shadow: 0px 0px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);border-radius: 13px;">
                                     <option value="1">Licence</option>
                                     <option value="2">master</option>
                                     <option value="3">Cycle</option>
-                                </select><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">Niveau</label><small class="form-text text-danger help-block"></small></div>
+                                </select><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">
+                                    Niveau
+                                </label><small class="form-text text-danger help-block"></small></div>
                         </div>
+                        <!-- ? année -->
                         <div class="control-group" style="margin-top: 5px;">
-                            <div class="mb-0 form-floating controls pb-2"><textarea class="form-control" rows="6"></textarea><label class="form-label" style="width: 243.5625px;font-family: Actor, sans-serif;">Description et objectif du projet</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 form-floating controls pb-2">
+                                <input formControlName="annee" class="form-control color-bm" type="text" id="email-1" required="" placeholder="Email" style="box-shadow: 0px 0px;color: var(--bs-gray-900);height: 62px;opacity: 1;--bs-body-bg: #2f3438;--bs-body-font-weight: normal;background: var(--bs-white);font-family: Alef, sans-serif;border-radius: 13px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">
+                                année
+                            </label><small class="form-text text-danger help-block"></small></div>
                         </div>
+                        <!-- ? anne validation -->
+                        <!-- ? description -->
                         <div class="control-group" style="margin-top: 5px;">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control color-bm" type="text" id="email-1" required="" placeholder="Email" style="box-shadow: 0px 0px;color: var(--bs-gray-900);height: 62px;opacity: 1;--bs-body-bg: #2f3438;--bs-body-font-weight: normal;background: var(--bs-white);font-family: Alef, sans-serif;border-radius: 13px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">année</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 form-floating controls pb-2">
+                                <textarea formcontrolName="description" class="form-control" rows="6"></textarea><label class="form-label" style="box-shadow: 0px 0px;width: 243.5625px;font-family: Actor, sans-serif;">
+                                Description et objectif du projet
+                            </label><small class="form-text text-danger help-block"></small></div>
                         </div>
+                        <!-- ? description validation -->
+                        
                     </form>
                 </div>
-                <div class="modal-footer" style="background: #f1f5f8;"><button class="btn btn-light" type="button" data-bs-dismiss="modal" style="color: var(--bs-gray-900);background: var(--bs-gray-300);">fermer</button><button class="btn btn-primary disabled" type="submit" disabled="">enregistrer</button></div>
+                <!-- ? dismiss modal -->
+                <div class="modal-footer" style="background: #f1f5f8;"><button class="btn btn-light" type="button" data-bs-dismiss="modal" style="color: var(--bs-gray-900);background: var(--bs-gray-300);">
+                    fermer
+                </button>
+                <!-- ? enregistrer -->
+                <button [enabled]="vilid.invalid" class="btn btn-primary disabled" type="submit" disabled="">
+                    enregistrer                    
+                </button></div>
             </div>
         </div>
     </div>
+    <!-- ? modal ancien pfe -->
     <div class="modal fade" role="dialog" tabindex="-1" id="ancien">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
+                <!-- ? header modal -->
                 <div class="modal-header d-md-flex justify-content-lg-center" style="background: #f1f5f8;">
                     <div class="d-md-flex justify-content-md-center">
                         <h4 class="modal-title text-center d-lg-flex justify-content-lg-center" style="color: var(--bs-gray-900);">Vous remplissez un ancien PFE</h4>
                     </div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!-- ? body modal -->
                 <div class="modal-body" style="background: #f1f5f8;">
-                    <form>
+                    <form enctype="multipart/form-data" #valid="ngForm" [formGroup]="ancienPfe">
+                        <!-- ? titre -->
                         <div class="control-group" style="margin-top: 5px;">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control color-bm" type="text" id="email-2" required="" placeholder="Email" style="box-shadow: 0px 0px;color: var(--bs-gray-900);height: 62px;opacity: 1;--bs-body-bg: #2f3438;--bs-body-font-weight: normal;background: var(--bs-white);font-family: Alef, sans-serif;border-radius: 13px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">titre du projet</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 form-floating controls pb-2">
+                                <input formControlName="titre" class="form-control color-bm" type="text" id="email-2" required="" placeholder="Email" style="box-shadow: 0px 0px;color: var(--bs-gray-900);height: 62px;opacity: 1;--bs-body-bg: #2f3438;--bs-body-font-weight: normal;background: var(--bs-white);font-family: Alef, sans-serif;border-radius: 13px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">
+                                titre du projet
+                            </label><small class="form-text text-danger help-block"></small></div>
                         </div>
+                        <!-- ? niveau -->
                         <div class="control-group" style="margin-top: 5px;">
-                            <div class="mb-0 form-floating controls pb-2"><select class="form-select" style="border-bottom-width: 2px;border-bottom-color: var(--bs-teal);border-radius: 13px;">
+                            <div  class="mb-0 form-floating controls pb-2"><select class="form-select" style="box-shadow: 0px 0px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);border-radius: 13px;">
                                     <option value="1">Licence</option>
                                     <option value="2">master</option>
                                     <option value="3">Cycle</option>
-                                </select><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">Niveau</label><small class="form-text text-danger help-block"></small></div>
+                                </select><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">
+                                    Niveau
+                                </label><small class="form-text text-danger help-block"></small></div>
                         </div>
+                        <!-- ? année -->
                         <div class="control-group" style="margin-top: 5px;">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control color-bm" type="text" id="email-3" required="" placeholder="Email" style="box-shadow: 0px 0px;color: var(--bs-gray-900);height: 62px;opacity: 1;--bs-body-bg: #2f3438;--bs-body-font-weight: normal;background: var(--bs-white);font-family: Alef, sans-serif;border-radius: 13px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">année</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 form-floating controls pb-2">
+                                <input formControlName="annee" class="form-control color-bm" type="text" id="email-3" required="" placeholder="Email" style="box-shadow: 0px 0px;color: var(--bs-gray-900);height: 62px;opacity: 1;--bs-body-bg: #2f3438;--bs-body-font-weight: normal;background: var(--bs-white);font-family: Alef, sans-serif;border-radius: 13px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"><label class="form-label" style="width: 130.5625px;font-family: Actor, sans-serif;">
+                                année
+                            </label><small class="form-text text-danger help-block"></small></div>
                         </div>
+                        <!-- ? description -->
                         <div class="control-group" style="margin-top: 5px;">
-                            <div class="mb-0 form-floating controls pb-2"><textarea class="form-control" rows="6" style="border-width: 0px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"></textarea><label class="form-label" style="width: 243.5625px;font-family: Actor, sans-serif;">Description et objectif du projet</label><small class="form-text text-danger help-block"></small></div>
-                        </div><label class="form-label" style="margin-bottom: 3px;">Page de garde : A4</label><input class="form-control form-control-lg" type="file" style="border-width: 0px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);margin-bottom: 9px;"><label class="form-label" style="margin-bottom: 4px;">rapport (.pdf)</label><input class="form-control form-control-lg" type="file" style="border-width: 0px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);">
+                            <div class="mb-0 form-floating controls pb-2">
+                                <textarea formControlName="description" class="form-control" rows="6" style="box-shadow: 0px 0px;border-width: 0px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);"></textarea><label class="form-label" style="width: 243.5625px;font-family: Actor, sans-serif;">
+                                Description et objectif du projet
+                            </label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <label class="form-label" style="margin-bottom: 3px;">
+                            Page de garde : A4
+                        </label>
+                        <!-- ? page de garde -->
+                        <input formControlName="pageGarde" class="form-control form-control-lg" type="file" style="box-shadow: 0px 0px;border-width: 0px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);margin-bottom: 9px;">
+                        <label class="form-label" style="margin-bottom: 4px;">
+                            rapport (.pdf)
+                        </label>
+                        <!-- ? rapport -->
+                        <input formControlName="rapport" class="form-control form-control-lg" type="file" style="box-shadow: 0px 0px;border-width: 0px;border-bottom-width: 2px;border-bottom-color: var(--bs-teal);">
                     </form>
                 </div>
-                <div class="modal-footer" style="background: #f1f5f8;"><button class="btn btn-light" type="button" data-bs-dismiss="modal" style="color: var(--bs-gray-900);background: var(--bs-gray-300);">fermer</button><button class="btn btn-primary disabled" type="submit" disabled="">enregistrer</button></div>
+                <!-- ? footer modal -->
+                <div class="modal-footer" style="background: #f1f5f8;">
+                <!-- ? dismiss modal -->
+                    <button class="btn btn-light" type="button" data-bs-dismiss="modal" style="color: var(--bs-gray-900);background: var(--bs-gray-300);">
+                    fermer
+                </button>
+                <!-- ? enregistrer -->
+                <button [enabled]="valid.invalid" class="btn btn-primary disabled" type="submit" disabled="">
+                    enregistrer                    
+                </button></div>
             </div>
         </div>
     </div>
+    <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="assets/js/script.min.js"></script>
